@@ -12,4 +12,12 @@ public class Car {
         this.model = model;
         this.series = series;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", series=" + series +
+                '}';
+    }
 }
