@@ -56,7 +56,7 @@ public class Car {
 
     @Override
     public boolean equals(Object o) {
-        if (this == null) return true;
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
         return series == car.series && Objects.equals(model, car.model);
