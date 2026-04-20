@@ -33,7 +33,7 @@ public class MainApp {
          users.get(i).setCar(cars.get(i));
       }
 
-      users = userService.listUsers()
+      users = userService.listUsers();
       for (User user : users) {
          System.out.println("Id = " + user.getId());
          System.out.println("First Name = " + user.getFirstName());
@@ -44,6 +44,13 @@ public class MainApp {
             System.out.println("Car Series = " + user.getCar().getSeries());
          }
          System.out.println();
+      }
+
+      User user = userService.getUserByCarModelAndSeries("BMW", 5);
+      if (user != null) {
+         System.out.println("Владелец автомобиля BMW серии 5 " + user.getFirstName() + " " + user.getLastName());
+      } else {
+         System.out.println("Не найден");
       }
 
       context.close();
